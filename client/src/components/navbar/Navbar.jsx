@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
-          <img src="/images/logo.png" alt="okor-del-logo" />
+          <img src="/images/okordel.png" alt="okor-del-logo" />
         </div>
         <div className="navbar-right">
           <div className="right-lg-srn">

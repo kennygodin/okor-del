@@ -52,7 +52,7 @@ const RequestCall = () => {
           </p>
           <p>
             We inspire clients to make their most challenging business decisions
-            with confidence. Send us a message, or phone +358 403 698 459
+            with confidence. Send us a message, or phone +358 102 122 670
             between 09:00 and 18:00 Monday to Friday — we would be delighted to
             speak about how we could help your firm.
           </p>

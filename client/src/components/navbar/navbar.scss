@@ -41,10 +41,10 @@
     }
 
     .navbar-left {
-      width: 120px;
+      width: 60px;
 
-      @include responsive.sm {
-        width: 100px;
+      @include responsive.lg {
+        width: 40px;
       }
 
       img {
@@ -193,7 +193,6 @@
 
       .hamburger {
         display: none;
-        color: #e01e26;
 
         @include responsive.lg {
           display: block;

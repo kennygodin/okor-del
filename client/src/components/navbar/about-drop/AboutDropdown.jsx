@@ -69,7 +69,7 @@ const AboutDropdown = ({ onMouseEnter, onMouseLeave }) => {
           <div className="drop-right-item">
             <SlPhone size={30} className="about-drop-icon" />
             <p>
-              +358 403 698 459
+              +358 102 122 670
               <br />
               Mon-Fri, 9am until 6pm
             </p>
@@ -78,7 +78,7 @@ const AboutDropdown = ({ onMouseEnter, onMouseLeave }) => {
           <div className="drop-right-item">
             <SlEnvolope size={30} className="about-drop-icon" />
             <p>
-              jaiyeolaeo@gmail.com
+              hello@okordel.com
               <br />
               We always reply within 24 hours
             </p>
