@@ -1,0 +1,15 @@
+@use '../../../responsive.scss' as responsive;
+
+.services-cards {
+  padding: 70px 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+
+  @include responsive.md {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}

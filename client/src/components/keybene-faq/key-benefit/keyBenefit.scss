@@ -1,0 +1,37 @@
+.key-benefit {
+  font-family: 'Hind', sans-serif;
+  font-weight: 300;
+  flex: 1;
+
+  h3 {
+    color: #222222;
+    font-size: 28px;
+    font-weight: 300;
+  }
+
+  p {
+    color: #454545;
+    font-family: Hind;
+    font-size: 16px;
+  }
+
+  .benefits {
+    margin-top: 10px;
+
+    .item {
+      margin-top: 5px;
+      display: flex;
+      align-items: start;
+      gap: 5px;
+      line-height: 1.2;
+
+      .icon {
+        color: #e01e26;
+      }
+
+      p {
+        color: #222222;
+      }
+    }
+  }
+}

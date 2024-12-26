@@ -1,0 +1,62 @@
+@use '../../responsive.scss' as responsive;
+
+.faq-full {
+  padding: 50px 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Hind', sans-serif;
+
+  .faq-full-accordion {
+    margin-top: 10px;
+    width: 80%;
+
+    @include responsive.md {
+      width: 100%;
+    }
+
+    .item {
+      border-top: 1px solid #e7e2e2;
+      .title {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f8f8f8;
+        padding: 20px;
+
+        p {
+          font-size: 18px;
+          font-weight: 300;
+        }
+
+        .icon {
+          color: #e01e26;
+          font-size: 20px;
+        }
+      }
+
+      .content {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #222222;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s cubic-bezier(0, 1, 0, 1);
+
+        .answer {
+          padding: 8px 20px;
+        }
+
+        &.show {
+          height: auto;
+          max-height: 1000px;
+          transition: 0.5s cubic-bezier(1, 0, 1, 0);
+        }
+      }
+    }
+  }
+}

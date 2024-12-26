@@ -1,0 +1,122 @@
+.faq {
+  font-family: 'Roboto Slab';
+  color: #333333;
+  font-size: 14px;
+  font-weight: 300;
+
+  .faq-breadcrumbs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .faq-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      a > span {
+        &:first-child,
+        &:nth-child(2) {
+          cursor: pointer;
+          color: #333333;
+        }
+      }
+
+      span {
+        color: #999999;
+      }
+    }
+
+    .faq-share {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .faq-wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0px 20px;
+
+    span {
+      color: #e01e26;
+      font-family: Poppins;
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    h5 {
+      font-family: 'Roboto Slab';
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 10px;
+    }
+  }
+
+  .faq-line {
+    height: 1px;
+    width: 100%;
+    margin: 50px 0;
+    background-color: #d6d6d6;
+  }
+
+  .faq-query {
+    text-align: center;
+    background-color: #f2f2f2;
+    margin-top: 50px;
+    padding: 50px;
+    font-family: Poppins;
+
+    span {
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 300;
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+
+    .faq-users {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      justify-content: center;
+
+      .user {
+        margin-top: 50px;
+
+        img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        p {
+          font-family: 'Roboto Slab';
+          font-size: 18px;
+          font-weight: 300;
+          margin-top: 10px;
+
+          &:last-child {
+            font-size: 14px;
+            cursor: pointer;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

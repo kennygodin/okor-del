@@ -1,0 +1,176 @@
+@use '../../responsive.scss' as responsive;
+
+.home-slider {
+  position: relative;
+
+  .slider-arrows {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+
+    .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      width: 35px;
+      height: 100px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .arrow:first-child {
+      position: absolute;
+      left: 0px;
+    }
+
+    .arrow:last-child {
+      position: absolute;
+      right: 0px;
+    }
+
+    @include responsive.md {
+      display: none;
+    }
+  }
+
+  &:hover .slider-arrows {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .slide-content {
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    color: #ffffff;
+    z-index: 1;
+    left: 30%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    padding-right: 20px;
+
+    @include responsive.lg {
+      // width: 480px;
+    }
+
+    @include responsive.md {
+      width: 80%;
+    }
+
+    &.animate {
+      left: 10%;
+      opacity: 1;
+
+      @include responsive.lg {
+        left: 5%;
+      }
+
+      @include responsive.md {
+        left: 3%;
+      }
+    }
+
+    .slide-content-title {
+      font-family: 'Hind', sans-serif;
+      font-size: 56px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.2;
+
+      @include responsive.lg {
+        font-size: 40px;
+      }
+
+      @include responsive.md {
+        font-size: 36px;
+        line-height: 1.1;
+      }
+
+      @include responsive.sm {
+        font-size: 26px;
+        line-height: 1;
+      }
+    }
+
+    .slide-content-desc {
+      width: inherit;
+      font-family: 'Hind', sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.4;
+      color: #b8b2b2;
+
+      @include responsive.md {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-top: 5px;
+      }
+
+      @include responsive.sm {
+        font-size: 14px;
+        line-height: 1;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 30px;
+      color: #ffffff;
+      cursor: pointer;
+      background-color: transparent;
+      border: 4px solid #979595;
+      transition: border 0.3s ease-out;
+      font-family: 'Hind', sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 16px;
+
+      &:hover {
+        border: 4px solid #ffffff;
+      }
+
+      @include responsive.md {
+        display: none;
+      }
+    }
+  }
+
+  .slider-img-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.1)
+      );
+      z-index: 0;
+    }
+  }
+}

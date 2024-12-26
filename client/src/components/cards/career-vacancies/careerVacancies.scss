@@ -1,0 +1,24 @@
+@use '../../../responsive.scss' as responsive;
+
+.career-vacancies-cards {
+  padding: 0px 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 40px;
+
+  @include responsive.md {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    margin-top: 30px;
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+  @include responsive.sm {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,205 @@
+@use '../../responsive.scss' as responsive;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-bottom: 1px solid lightgray;
+
+  @include responsive.md {
+    position: relative;
+  }
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @include responsive.xl {
+      // background-color: rebeccapurple;
+      padding: 0px 40px;
+    }
+
+    @include responsive.lg {
+      // background-color: teal;
+      height: 60px;
+    }
+
+    @include responsive.md {
+      // background-color: tomato;
+      padding: 0px 20px;
+    }
+
+    @include responsive.sm {
+      // background-color: violet;
+      height: 50px;
+      padding: 0px 10px;
+    }
+
+    .navbar-left {
+      width: 120px;
+
+      @include responsive.sm {
+        width: 100px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive.md {
+      flex: 0;
+    }
+
+    .right-lg-srn {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      @include responsive.lg {
+        display: none;
+      }
+
+      .navbar-link {
+        color: #222222;
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        cursor: pointer;
+        height: 80px;
+        display: flex;
+        align-items: center;
+
+        &.active {
+          color: #e01e26;
+        }
+
+        &.drop-wrapper {
+          position: relative;
+
+          .drop {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &.active {
+              color: #e01e26;
+            }
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 25px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: black;
+          transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: #e01e26;
+        }
+
+        &:hover::after {
+          width: 100%;
+          background-color: #e01e26;
+        }
+      }
+
+      button {
+        padding: 8px 20px;
+        color: #e01e26;
+        cursor: pointer;
+        background-color: transparent;
+        border: 4px solid #ededed;
+        transition: border 0.3s ease-out;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+
+        &:hover {
+          border: 4px solid #b8b2b2;
+        }
+      }
+    }
+
+    .right-sm-srn {
+      display: none;
+
+      position: relative;
+
+      @include responsive.lg {
+        display: flex;
+        align-items: center;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease-in-out;
+
+        @include responsive.lg {
+          top: 60px;
+        }
+
+        @include responsive.sm {
+          top: 50px;
+        }
+
+        &.active {
+          right: -380px;
+        }
+
+        .sm-line {
+          width: 100%;
+          height: 1px;
+          background-color: #e2dada;
+        }
+
+        .link-items {
+          color: #222222;
+          width: 100%;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 20px 40px;
+          font-family: 'Poppins', sans-serif;
+          cursor: pointer;
+        }
+      }
+
+      .hamburger {
+        display: none;
+        color: #e01e26;
+
+        @include responsive.lg {
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

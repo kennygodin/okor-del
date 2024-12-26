@@ -1,0 +1,27 @@
+.career-vacancy-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+
+  .career-vacancy-card-role {
+    margin-bottom: 15px;
+    font-family: 'Roboto Slab';
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .career-vacancy-card-desc {
+    font-family: 'Hind', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #454545;
+    margin-bottom: 10px;
+  }
+
+  .career-vacancy-card-date {
+    margin-top: auto;
+    font-size: 12px;
+  }
+}

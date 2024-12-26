@@ -1,0 +1,29 @@
+@use '../../responsive.scss' as responsive;
+
+.services-sidebar {
+  width: 230px;
+
+  @include responsive.md {
+    width: 100%;
+  }
+
+  .sidebar-item {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-family: Hind;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 3px;
+    padding: 12px;
+
+    &:hover {
+      background-color: #ebe9e9;
+      color: #e01e26;
+    }
+
+    &.active {
+      color: #e01e26;
+      border-right: 3px solid #e01e26;
+    }
+  }
+}

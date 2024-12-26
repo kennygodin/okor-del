@@ -1,0 +1,60 @@
+@use '../../../responsive.scss' as responsive;
+
+.about-hero {
+  height: 450px;
+  padding: 0px 20px;
+  background: linear-gradient(to right, #d32f2f, #7a0303);
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+
+  .about-hero-content {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .about-hero-subtitle {
+      font-family: 'Roboto Slab';
+      font-size: 24px;
+      font-weight: 100;
+      margin-bottom: 20px;
+    }
+
+    .about-hero-maintitle {
+      font-family: 'Hind', sans-serif;
+      font-size: 64px;
+      font-weight: 600;
+      letter-spacing: -1.8px;
+      line-height: 1;
+
+      @include responsive.md {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 30px;
+      color: #ffffff;
+      cursor: pointer;
+      background-color: transparent;
+      border: 4px solid #ffffff;
+      transition: border 0.3s ease-out, transform 0.6s ease, opacity 0.6s ease;
+      font-family: 'Hind', sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 16px;
+      transform: translateY(100px);
+      opacity: 0;
+
+      &.slide-in {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      &:hover {
+        border: 4px solid #b8b2b2;
+      }
+    }
+  }
+}

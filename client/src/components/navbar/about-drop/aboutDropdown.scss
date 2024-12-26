@@ -1,0 +1,102 @@
+@use '../../../responsive.scss' as responsive;
+
+.about-dropdown {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+
+  background-color: #222222;
+  padding: 40px 150px;
+  z-index: 10;
+  color: #ffffff;
+
+  @include responsive.xl {
+    padding: 40px 50px;
+  }
+
+  .about-dropdown-container {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: start;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #999999;
+      font-family: 'Hind', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .about-drop-left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      p {
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .about-drop-center {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+        filter: brightness(0.8);
+        transition: filter 0.3s ease;
+
+        &:hover {
+          filter: brightness(1);
+        }
+      }
+
+      h4 {
+        margin-top: 5px;
+        margin-bottom: 2px;
+      }
+    }
+
+    .about-drop-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .drop-right-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .about-drop-icon {
+          color: #999999;
+        }
+      }
+
+      hr {
+        border: none;
+        border-bottom: 1px solid #cccccc;
+        opacity: 0.7;
+        margin: 4px 0;
+      }
+    }
+  }
+}

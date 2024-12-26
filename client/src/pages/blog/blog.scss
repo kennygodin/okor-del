@@ -1,0 +1,62 @@
+@use '../../responsive.scss' as responsive;
+
+.blog {
+  font-family: 'Roboto Slab';
+  color: #333333;
+  font-size: 14px;
+  font-weight: 300;
+
+  .blog-breadcrumbs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .blog-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      a > span {
+        &:first-child,
+        &:nth-child(2) {
+          cursor: pointer;
+          color: #333333;
+        }
+      }
+
+      span {
+        color: #999999;
+      }
+    }
+
+    .blog-share {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .blog-content {
+    padding: 0px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+
+    .blog-main {
+      flex: 1;
+    }
+
+    .blog-sidebar {
+      width: 280px;
+
+      @include responsive.md {
+        display: none;
+      }
+    }
+  }
+}

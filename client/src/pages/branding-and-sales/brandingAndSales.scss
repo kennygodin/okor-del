@@ -1,0 +1,122 @@
+@use '../../responsive.scss' as responsive;
+
+.branding-and-sales {
+  font-family: 'Roboto Slab';
+  color: #333333;
+  font-size: 14px;
+  font-weight: 300;
+
+  .branding-and-sales-breadcrumbs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .branding-and-sales-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      a > span {
+        &:first-child,
+        &:nth-child(2) {
+          cursor: pointer;
+          color: #333333;
+        }
+      }
+
+      span {
+        color: #999999;
+      }
+    }
+
+    .branding-and-sales-share {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .branding-and-sales-content {
+    padding: 0px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+
+    @include responsive.md {
+      flex-direction: column-reverse;
+    }
+
+    .main-content {
+      flex: 1;
+
+      h5 {
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      .main-item {
+        margin-top: 30px;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-start;
+
+        @include responsive.sm {
+          flex-direction: column;
+        }
+
+        .texts {
+          font-family: 'Hind';
+          flex: 1;
+
+          h4 {
+            font-weight: 300;
+            font-size: 24px;
+
+            @include responsive.md {
+              line-height: 1;
+              margin-bottom: 5px;
+            }
+          }
+
+          p {
+            font-size: 16px;
+            font-weight: 300;
+          }
+        }
+
+        .contentImg {
+          width: 300px;
+          height: 190px;
+
+          @include responsive.md {
+            width: 250px;
+          }
+
+          @include responsive.sm {
+            width: 100%;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .services-line {
+    height: 1px;
+    width: 100%;
+    margin: 50px 0;
+    background-color: #d6d6d6;
+  }
+}

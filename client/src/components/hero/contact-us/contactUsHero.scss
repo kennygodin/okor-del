@@ -1,0 +1,35 @@
+@use '../../../responsive.scss' as responsive;
+
+.contact-us-hero {
+  height: 380px;
+  padding: 0px 20px;
+  background: linear-gradient(to right, #87bba3, #59a583);
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+
+  .contact-us-hero-content {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .contact-us-hero-subtitle {
+      font-family: 'Roboto Slab';
+      font-size: 24px;
+      font-weight: 100;
+      margin-bottom: 20px;
+    }
+
+    .contact-us-hero-maintitle {
+      font-family: 'Hind', sans-serif;
+      font-size: 64px;
+      font-weight: 600;
+      letter-spacing: -1.8px;
+      line-height: 1;
+
+      @include responsive.md {
+        font-size: 40px;
+        line-height: 1.2;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@use '../../responsive.scss' as responsive;
+.services {
+  font-family: 'Roboto Slab';
+  color: #333333;
+  font-size: 14px;
+  font-weight: 300;
+
+  .services-breadcrumbs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .services-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      span {
+        &:first-child {
+          cursor: pointer;
+        }
+
+        &:last-child {
+          color: #999999;
+        }
+      }
+    }
+
+    .services-share {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .services-card-items {
+    padding: 0px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 40px;
+
+    @include responsive.md {
+      grid-template-columns: 1fr;
+      padding: 20px;
+      column-gap: 20px;
+      row-gap: 30px;
+    }
+  }
+
+  .services-line {
+    height: 1px;
+    width: 100%;
+    margin: 50px 0;
+    background-color: #d6d6d6;
+  }
+}

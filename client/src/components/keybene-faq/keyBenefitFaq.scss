@@ -1,0 +1,15 @@
+@use '../../responsive.scss' as responsive;
+
+.keybene-faq {
+  padding: 0 20px 70px 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+
+  @include responsive.md {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
