@@ -44,6 +44,7 @@
 
         label {
           font-size: 16px;
+          font-family: 'Hind', sans-serif;
         }
 
         input,
@@ -55,6 +56,15 @@
           font-size: 16px;
           font-weight: 300;
         }
+      }
+
+      .sending {
+        font-size: 16px;
+      }
+
+      .error {
+        color: #e01e26;
+        font-size: 16px;
       }
 
       button {
@@ -72,6 +82,11 @@
 
         &:hover {
           border: 4px solid #b8b2b2;
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
         }
       }
     }

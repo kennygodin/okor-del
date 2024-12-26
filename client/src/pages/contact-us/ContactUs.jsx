@@ -2,8 +2,63 @@ import { IoMdShare } from 'react-icons/io';
 import ContactUsHero from '../../components/hero/contact-us/ContactUsHero';
 import './contactUs.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+const apiUrl = import.meta.env.DEV
+  ? import.meta.env.VITE_LOCAL_API
+  : import.meta.env.VITE_REMOTE_API;
 
 const ContactUs = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState(false);
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+
+    setError(false);
+    setSuccess(false);
+    setIsSending(true);
+
+    try {
+      const response = await fetch(`${apiUrl}contact-us`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          phoneNumber,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        setName('');
+        setEmail('');
+        setMessage('');
+        setSubject('');
+        setPhoneNumber('');
+      } else {
+        setError(true);
+        console.error('Error:', await response.text());
+      }
+    } catch (error) {
+      setError(true);
+      console.error('Error:', error);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <div className="contact-us">
       <ContactUsHero
@@ -34,31 +89,60 @@ const ContactUs = () => {
       <div className="contact-us-line"></div>
 
       <div className="contact-us-main">
-        <form>
+        <form onSubmit={submitForm}>
           <div className="item">
             <label>Name</label>
-            <input placeholder="Enter your name" type="text" />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              type="text"
+              required
+            />
           </div>
           <div className="item">
             <label>Email</label>
-            <input type="email" placeholder="e.g john@gmail.com" />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="e.g john@gmail.com"
+              required
+            />
           </div>
           <div className="item">
-            <label>Phone number</label>
-            <input type="text" placeholder="If you want us to call you back" />
+            <label>Phone number (optional)</label>
+            <input
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              type="text"
+              placeholder="If you want us to call you back"
+            />
           </div>
           <div className="item">
             <label>Subject</label>
             <input
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
               type="text"
               placeholder="Let’s know your topic of interest"
+              required
             />
           </div>
           <div className="item">
             <label>Your message</label>
-            <textarea></textarea>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            ></textarea>
           </div>
-          <button>Submit</button>
+          {isSending && <div className="sending">Sending...</div>}
+          {success && <div className="sending">Message sent.</div>}
+          {error && <div className="error">Uh um... Something went wrong.</div>}
+          <button disabled={isSending} type="submit">
+            {success ? 'Message sent' : 'Submit'}
+          </button>
         </form>
         <div className="map-container">
           <iframe
